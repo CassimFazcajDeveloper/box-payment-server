@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
-const paymentRoutes = require("./routes/paymentRoutes");
+const paymentRoutes = require("./routes/payment");
 
 const app = express();
 
@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use("/api/payments", paymentRoutes);
+app.use("/api/payments", payment);
 
 // MongoDB connection
 mongoose.connect("mongodb://127.0.0.1:27017/boxDB")
